@@ -1,0 +1,75 @@
+
+1. Pass by reference: (pass by address)
+    - copy the actual object address and pass to method invokation.
+
+2. Pass by value: (copy will be dystroied after method execution)
+    - primitive: copy the actual value and pass to frame(operand stack)
+    - object reference: copy the reference which actually point to actual object and pass to frame
+    (there are two references which are point to the same object now)
+
+3. COPY: reuse part or all data in new context
+拷贝目的：在新的上下文中，复用对象的部分或全部数据。
+
+https://javaconceptoftheday.com/difference-between-shallow-copy-vs-deep-copy-in-java/
+https://www.javatpoint.com/object-cloning
+good one:
+https://howtodoinjava.com/java/cloning/a-guide-to-object-cloning-in-java/
+
+https://juejin.cn/post/6844903806577164302
+https://segmentfault.com/a/1190000010648514
+
+
+3.1 Shallow copy: copy all the fields of original object - copy references, not actual objects
+3.2 Deep copy: copy reference and object - there are two exactly same disjoint objects now
+
+https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-2.html#jvms-2.5
+JVM - operand stack
+https://blog.csdn.net/MirkoWug/article/details/108889116
+
+https://www.cs.virginia.edu/~jh2jf/courses/cs2110/java-pass-by-value.html
+
+For program execution, "system" make copy of variable, and pass to execution method
+
+Reference Copy:
+copy actual address of the object
+the caller and the callee operate on the same object.
+    Pass By Reference: pass the copy of address
+    引用地址的拷贝，说明引用地址一样，指向堆中的对象是同一个对象。
+    如果对一个对象进行改变，其他对象也会跟着改变。
+
+Value Copy:
+the caller and the callee method operate on two different variables which are copies of each other.
+parameters passed to the callee method will be clones of original parameters.
+Any modification done in callee method will have no effect on the original parameters in caller method.
+对象拷贝指 对某一对象进行拷贝，是创建了一个全新的对象，也就是内存中存在二个不同地址的对象，
+这二个对象的基本数据类型变量的内容值都是一样的，但所包含的对象变量的地址可能一样可能不一样，
+浅拷贝与深拷贝的区别就在这里。
+
+Primitive variables store the actual values,
+whereas Non-Primitives store the reference variables which point
+to the addresses of the objects they're referring to.
+Both values and references are stored in the stack memory.
+
+
+During method invokation, A COPY of each argument,
+whether its a value or reference,
+is created in stack memory which is then passed to the method.
+
+https://www.baeldung.com/java-pass-by-value-or-pass-by-reference
+
+JVM stack : each thread has its independent JVM stack
+    -> frame(operand stack) : each method has its own operand stack, life cycle = method life cycle
+when invoke a method, JVM copies each argument and pass them to newly created operand stack for operation
+
+    Shallow Copy
+    当前对象里包含有对象变量，如果复制的对象中的对象变量和原对象里的对象地址值是相同的，
+    即引用拷贝，则称之为浅拷贝。我们也可以称之为部分拷贝，即拷贝的不彻底。
+
+    Deep Copy
+    当前对象里包含有对象变量，如果复制的对象中的对象变量和原对象里的对象地址值是不同的，
+    即创建了一个新的对象，则称之为深拷贝。我们也可以称之为完全拷贝，内部进行了彻底拷贝。
+
+    所以，如果一个对象中仅包含基本数据类型，则浅拷贝和深拷贝则没区别。
+    如果一个对象中包含了对象变量，则对这些对象变量的拷贝 就成了 浅拷贝和深拷贝的区别。
+
+

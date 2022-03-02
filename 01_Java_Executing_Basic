@@ -1,0 +1,118 @@
+JVM tutorial:
+https://docs.oracle.com/javase/specs/jvms/se8/html/index.html
+
+1. JDK - JRE - JVM
+JDK (Java Development Kit)
+  - compiler(javac)
+  - interpreter(java)
+  - javadoc
+  - jar
+  - JRE (Java Runtime Environment)
+    - libraries
+    - other java executing docs
+    - JVM (Java Virtual Machine)
+       - classloader
+       - classarea
+       - stack
+       - heap
+       - JIT compiler(Just In Time) -> Method Inlining to optimize the source code
+         - converts the byte-code to machine code.
+         - improve performance, runs on demand, compiles only the reusable byte code to machine code.
+            (for rapidly called method, only compile once, avoid duplication compile)
+
+         How JIT decide if a method will be inlined?
+         1) (hot)counter: > 10,000 will be inlined
+         2) size: The acceptable size is limited by the -XX:FreqInlineSize= flag,
+            which specifies the maximum number of bytecode instructions to inline for a method.
+            Too big & hot too big are not gonna be inlined
+
+         Note: The JIT inlines static, private, or final methods in general.
+                 And while public methods are also candidates for inlining,
+                 not every public method will necessarily be inlined.
+                 The JVM needs to determine that there's only a single implementation
+                 of such a method. Any additional subclass would prevent inlining
+                 and the performance will inevitably decrease.
+
+
+
+       https://en.wikibooks.org/wiki/Java_Programming/Compilation
+       https://www.geeksforgeeks.org/difference-between-jit-and-jvm-in-java/
+       https://www.baeldung.com/jvm-method-inlining
+
+2. STACK V.S. HEAP
+https://www.baeldung.com/java-stack-heap
+https://www.javatpoint.com/stack-vs-heap-java
+https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
+
+Heap:  1) life cycle:(long)start from when JVM starts - program start to run
+       2) load classes to heap once program started
+       3) create object when "new" keyword has been used
+       4) dynamitc allocate
+       5) need GC to release the space
+       6) not thread safe
+
+
+JRE has JVM stack, which include frame(operand stack), each method has its own frame(operand stack)
+Operand Stack:
+       1) life cycle:(short) use for method which is currenting running
+       2) when program hit "main", a thread will be created,
+          a stack space will be crated create reference for object, primitive varibles, method
+       3)
+       4) linar
+       5) destried after "return" of method
+       6) thread safe
+
+3. Common runtime errors:
+    1、数组开得太小了，导致访问到了不该访问的内存区域
+    2、发生除零错误
+    3、大数组定义在函数内,导致程序栈区耗尽
+    4、指针用错了，导致访问到不该访问的内存区域
+    5、还有可能是程序抛出了未接收的异常
+
+4. Variables:
+local variable:
+instance variable(field)
+static variable(field)
+
+1) Local Variable
+
+A variable declared inside the body of the method.
+eg: private void dfs() {
+    int level = 0; //local variable
+}
+
+A local variable cannot be defined with "static" keyword.
+
+2) Instance Variable
+https://www.tutorialspoint.com/Instance-variables-in-Java
+
+A variable declared inside the class but outside the body of the method,
+
+created ->  when an object is created with the use of the keyword 'new'
+destroyed -> when the object is destroyed.
+
+It is not declared as static.
+
+eg: class Test {
+    private Map<Integer, String> map = new HashMap<>(); //instance variable
+}
+
+3) Static variable
+https://stackoverflow.com/questions/8387989/where-are-static-methods-and-static-variables-stored-in-java
+Static methods (in fact all methods) as well as static variables are stored in the PermGen section of the heap
+
+PermGen Space used to store 3 things
+
+    Class level data (meta-data)
+    interned strings
+    static variables
+
+
+A variable that is declared as static is called a static variable.
+It cannot be local. You can create a single copy of the static variable
+and share it among all the instances of the class.
+Memory allocation for static variables happens only once
+when the class is loaded in the memory.
+
+5. Java operation:
+https://www.javatpoint.com/operators-in-java

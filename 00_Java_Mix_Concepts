@@ -1,0 +1,39 @@
+if something fails it happens immediately and visibly
+
+ C++ V.S. Java
+https://www.softwaretestinghelp.com/cpp-vs-java/
+flaws of CPP:
+1. not portable
+2. developers have FULL control of memory management - cause trouble
+                                                     - misuse of pointers
+
+ Java Design：
+ 1. Portable
+        - JDK JRE JVM(sandbox)
+ 2. Set restrictions (simple to use)
+        - Memory Management - OOP - strict methodology (avoid developers breaks code for other users)
+        - GC
+        - show warnings to prevent/alart when developers are making memory management vulnerability
+
+To Keep It Simple:
+1. pass by value - c++ can pass by reference
+2. not support multiple inheritance
+3. OOP - everything is an object
+4. ONLY method overloading is allowed - operator overloading is NOT allowed (1 + 1 can be anything in cpp)
+5. ALL non-static methods by default can be overridden, static method CANNOT be override
+6. Build-in thread support with a class “thread”, can be inheritanced
+7. Java is stricted object-oriented, even it supports lambda function after Java8, which is procedural function,
+   but only for limited use as
+8. NO "goto" function
+
+
+0. Summeraize language properties
+1） In Java, once a variable type has been declared, it cannot be changed.
+    Type of declared variable CANNOT be changed.
+
+1. final/finally/finalize
+https://www.javatpoint.com/difference-between-final-finally-and-finalize
+https://www.baeldung.com/java-finalize
+
+2. access modifiers
+http://tutorials.jenkov.com/java/access-modifiers.html

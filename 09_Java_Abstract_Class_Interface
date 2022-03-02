@@ -1,0 +1,55 @@
+1.abstruact class
+
+abstract method -> no need to implement method (like an interface)
+
+abstract class -> can have fields, and abstract/concrete methods
+               -> a class can be declared as "abstract" with NO abstract methods
+
+when "extends" an abstract class -> can keep methods "abstract"
+                                 -> can implment methods to be concrete
+
+Abstract class
+
+CAN NOT be instantiated -> can't "new" an abstract object
+CAN create abstract class variable -> must instantiated with concrete class object
+
+Person p = new Student("Jason"); //Person is abstract class, Student is its subclass with implementation
+
+*** Compiler ensures that only methods declared in classes can be invoked.
+
+2. Interface (abstract class with no instance fields )
+
+Java doesn't support multiple inheritance, "Interface" can have simular functions.
+
+multiple inheritance will make the program very complex(C++) or less efficient(Eiffel)
+
+A class can "implements" one or more interfaces.
+eg: public class A implements C,D {...}
+
+
+Interface DOES NOT have instance fields.
+
+Interface only promise what it can do, but not how to do it.
+
+ALL methods of an interface are automatically "public". - need to be used by outside
+    - when implement interface, need to clear "public" to method, otherwise, compiler will think it's "default"
+       which is package accessiable.
+
+Interface implementation:
+1) use "implements" keyword in class signature (declare class is implementing interface)
+2) must implement ALL methods in interface (supply defination)
+
+                abstract class                  interface
+
+CAN          declare variable          |     declare variable
+CAN          assign obj to abs variable|     assign obj to interface variable
+CAN          inheritanced (extends)    |     inheritanced (implements)
+CANNOT       "new" abstract object     |     "new" interface
+CANNOT
+DIFF         no need to implement all  |     MUST impelment all methods
+DIFF         can extends ONE class     |     can implements many interfaces
+DIFF         can have instance variable|     CANNOT have instance variable, but can have constants (public static final const)
+DIFF         must declare methods      |     can have only constants
+
+
+2.1 lambda function -> interface with only one method can use lambda function
