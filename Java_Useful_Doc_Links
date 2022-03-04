@@ -1,8 +1,46 @@
 1. oracle java docs :
-https://docs.oracle.com/en/java/javase/index.html
+https://docs.oracle.com/en/java/javase/index.htm
 
 2. oracle JVM docs :
 https://docs.oracle.com/javase/specs/jvms/se17/html/
 
   - 2.1 JVM stack:
     https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-2.html#jvms-2.5
+
+3. JRE:
+https://www.ibm.com/cloud/learn/jre#toc-what-does--1Qeq7Byt
+
+https://www.oracle.com/java/technologies/introduction-to-java.html
+
+java compile:
+https://www.oracle.com/java/technologies/security-in-java.html
+
+JVM:
+
+https://medium.com/javarevisited/jvm-101-introduction-classloader-sub-system-jit-compiler-part-1-9e5a6782fa3e
+
+JVM program execution:
+
+https://www.javatpoint.com/internal-details-of-hello-java-program
+
+https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-5.html
+
+https://www.guru99.com/java-virtual-machine-jvm.html
+
+class loader:
+
+https://blogs.oracle.com/javamagazine/post/how-the-jvm-locates-loads-and-runs-libraries
+
+https://www.geeksforgeeks.org/classloader-in-java/
+
+https://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html
+
+https://www.baeldung.com/java-classloaders
+
+JDK:
+
+https://www.techopedia.com/definition/5594/java-development-kit-jdk
+
+https://www.infoworld.com/article/3296360/what-is-the-jdk-introduction-to-the-java-development-kit.html
+
+https://www.infoworld.com/article/3304858/what-is-the-jre-introduction-to-the-java-runtime-environment.html
