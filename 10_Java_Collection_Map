@@ -1,0 +1,30 @@
+https://www.java67.com/2013/01/difference-between-set-list-and-map-in-java.html
+
+Dictionary<K,V> class is obsolete. New implementations should implement the Map interface,
+rather than extending this class.
+
+
+                                               |-> Set -> HashSet, TreeSet, LinkedHashSet
+                                               |
+                                               |
+                (interface)                             |-> List -> ArrayList, Stack, Vector
+             |-> Iterable<E> - Collection      |        |-> LinkedList
+             |         (a group of objects)    |        |-> LinkedList
+             |                                 |-> Queue -> ArrayDeque(amortized constant time)
+             |
+java.util -->
+                        |-> SortedMap(interface) --|
+                (interface)
+             |-> Map ->                            |
+                 an object map key to value)       |--> TreeMap(extends AbstractMap implements SortedMap)
+                        |-> AbstractMap(class)  ---|
+                                                   |
+                                                   |-> HashMap(class)
+
+
+HashMap
+
+HashSet
+
+ArrayDeque
+
