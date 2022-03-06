@@ -1,0 +1,19 @@
+https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html
+
+Thread of control -> thread
+
+Threads exist within a process — every process has at least one thread.
+Threads share the process's resources, including memory and open files.
+
+Multithreaded execution is an essential feature of the Java platform.
+Every application has at least one thread — or several
+
+Thread states:
+1. New -> new Thread();
+2. Runnable -> yield() -> static method
+3. Blocked
+4. Waiting
+5. Timed waiting
+6. Terminated
+
+Runnable thread:

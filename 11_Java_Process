@@ -1,0 +1,55 @@
+
+Conclusion:
+
+In OS ->
+a running program = a process of that program = an instance of that program
+
+thread vs process:
+
+https://techdifferences.com/difference-between-process-and-thread-in-java.html
+
+A computer program itself is just a passive collection of instructions,
+while a process is the actual execution of those instructions.
+Several processes may be associated with the same program;
+for example, opening up several windows of the same program
+typically means more than one process is being executed.
+
+eg：when I open two IntelliJ windows, there are TWO intelliJ processes running.
+
+Oracle link:
+https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html
+
+A process has a self-contained execution environment.
+A process generally has a complete, private set of basic run-time resources;
+in particular, each process has its own memory space.
+
+Program, Process, Instance
+
+https://segmentfault.com/a/1190000024423352
+
+program: 静态文件 -> 存储在硬盘
+process: 运行中的program -> 运行这个可执行文件后，它会被装载到内存中，接着 CPU 会执行程序中的每一条指令
+
+https://blog.csdn.net/chenweihua556/article/details/52450635
+
+程序(program)只能有一个进程，一个进程就是一个程序
+
+Each program ONLY have one process, a process is a running program.
+
+A “process” is what we call a program that has been loaded into memory
+along with all the resources it needs to operate.
+
+对于OS，一个进程就是一个程序，多个进程（如一个浏览器的多个进程）对OS而言是多个不同的程序，
+OS不会把它们理解为一个完整的“程序”。
+
+A parent process can fork() a child process,
+when a child process has been instantiated(实例化)，
+it become an independent process.
+
+Instance:
+https://whatis.techtarget.com/definition/instance
+https://en.wikipedia.org/wiki/Instance_(computer_science)
+
+In OS, each time a program runs, it is an instance of that program.
+
+
