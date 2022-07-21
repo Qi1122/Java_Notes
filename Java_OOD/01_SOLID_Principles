@@ -1,0 +1,12 @@
+
+Principle:
+
+    S - Single-responsiblity Principle -> a class should have only one job.
+    O - Open-closed Principle -> open for extension, closed for modification.
+    L - Liskov Substitution Principle ->  every subclass or derived class should be substitutable for their base or parent class.
+    I - Interface Segregation Principle
+    D - Dependency Inversion Principle -> This principle allows for decoupling.
+
+References:
+1.
+https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design#toc-single-responsibility-principle

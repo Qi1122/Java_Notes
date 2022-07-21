@@ -1,0 +1,71 @@
+
+在Step1 中与Task与特定实例绑定(zhang3 Phper)
+在Step2 中与Task与特定类型绑定(Phper)
+在Step3 中与Task与特定接口绑定(Coder)
+虽然都是绑定, 从Step1,Step2 到 Step3 灵活性可扩展性是依次提高的.
+Step1 作为反面教材不可取, 至于是否需要从Step2 提升为Step3, 要看具体情况.
+如果依赖的类型是唯一的Step2 就可以, 如果选项很多就选Step3设计.
+
+
+
+1. Dependency injection -> design pattern!!!
+Dependency injection is
+an approach to
+implement loose coupling among the classes in an application.
+It's one form of Inversion of Control.
+
+Thus dependency injection helps in implementing inversion of control (IoC).
+This means that the responsibility of object creation and injecting the
+dependencies is given to the framework (i.e. Spring)
+instead of the class creating the dependency objects by itself.
+-> framework handle injection
+
+2. Definition:
+In OOP, Dependency Injection is the
+process of
+supplying a
+resource that a giving
+code
+requires.
+
+3. Client and Service
+client: the receiving object ()
+service: the passed-in object (injected object)
+injector: the code that passes the service to the client
+
+injector tells the client what service to use
+
+The 'injection' refers to the
+passing of a dependency (a service) into the client that uses it.
+
+Passing the service to the client,
+rather than allowing the client to build or find the service, is the
+fundamental requirement of the pattern.
+
+3. Separation of concerns (decoupling)
+DI achieve separation of concerns of construction and use of objects.
+This can increase readability and code reuse.
+
+This means the client does not need to know about the injector,
+how to construct the services, or
+even which services it is actually using.
+
+The client only needs to know the interfaces of the services,
+because these define how the client may use the services.
+This separates the responsibility of 'use' from the responsibility of 'construction'.
+
+4.
+Many of dependency injection's benefits are particularly relevant to unit-testing.
+
+
+References:
+0.good explain:
+https://www.jianshu.com/p/506dcd94d4f9
+1.
+https://www.techtarget.com/searchapparchitecture/definition/dependency-injection
+2. wiki explain
+https://en.wikipedia.org/wiki/Dependency_injection
+3.constructor injection in Spring
+https://reflectoring.io/constructor-injection/
+4. codecamp
+https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/

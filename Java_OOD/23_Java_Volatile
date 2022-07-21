@@ -1,0 +1,58 @@
+cache coherence -> shared resource data that ends up stored in multiple local caches
+
+Java Memory Model: (JMM)
+check if a write is valid -> by exam each read
+A write to a volatile field happens-before every subsequent read of that field.
+must write first then read
+
+对一个volatile变量的写操作happen-before对这个变量之后的每一个读操作
+volatile reference is only updated in the final statement via setArray
+use volatile is to:
+1. 保证了不同线程对该变量操作的内存可见性;
+2. 禁止指令重排序
+
+Concurrency: needs
+Atomicity
+Visibility -> sync/lock can do, but more expensive
+Ordering
+
+线程写volatile变量的过程： volatile不能保证volatile变量复合操作的原子性
+https://stackoverflow.com/questions/19744508/volatile-vs-atomic
+
+1)改变线程工作内存中volatile变量副本的值。
+
+2)将改变后的副本的值从工作内存刷新到主内存。
+
+线程读volatile变量的过程：
+
+1)从主内存中读取volatile变量的最新值到线程的工作内存中。
+
+2)从工作内存中读取volatile变量的副本。
+
+
+
+Why volatile:
+sync/lock is more expensive than volatile
+
+
+transient:
+    1. We can use it for derived fields
+    2. It is useful for fields that do not represent the state of the object
+    3. We use it for any non-serializable references
+
+ Serialization: data -> byte code
+ 1. 保存 内存中的对象状态 -> 到一个文件 或者 数据库中时候；
+ 2. 当你想用套接字在网络上传送对象的时候；
+ 3. 当你想通过RMI传输对象的时候；
+
+ two features of serialization:
+ 1. prototyping of persistence
+ 2. short term storage of almost-arbitrary objects:
+
+References:
+1.zhihu
+https://zhuanlan.zhihu.com/p/56540493
+2. why shouldn't use serialization in Java:
+https://www.reddit.com/r/java/comments/qq21k/why_arent_all_objects_serializable/
+http://www.javapractices.com/topic/TopicAction.do?Id=45
+https://softwareengineering.stackexchange.com/questions/191269/java-serialization-advantages-and-disadvantages-use-or-avoid

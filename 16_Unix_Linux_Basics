@@ -1,0 +1,59 @@
+Q: why using linux? Ubuntu, Linux Mint
+A:
+1) High security and stability
+2) Open source: reduce developing cost
+3) Runs on any hardware:
+   Even through JVM allow Java program to run everywhere. However, connection with Database can
+   still relay on local environment. Using Linux allow developers to have the same "local" environment.
+4) Efficient
+
+1. Operation System: (kernal)
+A set of programs that act as a link between the computer and the user:
+
+1) allocate the system resources
+2) coordinate all the details of the computer's internals
+
+Users communicate with the kernel through a program(SHELL).
+
+2. Unix systems: linux is subset of unix
+Solaris Unix, AIX, HP Unix, BSD, Linux
+
+3. Unix is
+1) multiuser system: several people can use a Unix computer at the same time
+2) multitasking environment: a user can also run multiple programs at the same time
+
+4. Shell:
+A Shell provides you with an interface to the Unix system.
+interprets command -> calls the program that you want.
+The shell uses standard syntax for all commands
+
+In Unix, there are two major types of shells −
+
+    Bourne shell − If you are using a Bourne-type shell, the $ character is the default prompt.
+
+    C shell − If you are using a C-type shell, the % character is the default prompt.
+
+The Bourne Shell has the following subcategories −
+
+    Bourne shell (sh) --> bash（Bourne Again Shell），LinuxOS默认的，它是Bourne Shell的扩展。
+        -- 与Bourne Shell完全兼容，并且在Bourne Shell的基础上增加了很多特性。
+        可以提供命令补全，命令编辑和命令历史等功能。
+        它还包含了很多C Shell和Korn Shell中的优点，有灵活和强大的编辑接口，同时又很友好的用户界面。
+    Korn shell (ksh)
+    Bourne Again shell (bash)
+    POSIX shell (sh)
+
+5. Filesystem: (treelike)
+-> All the data of Unix is organized into files.
+-> All files are then organized into directories.
+-> These directories are further organized into a tree-like structure called the filesystem.
+
+6. permission types:
+directory (marked as ‚d‘)
+read (r) , write (w), and execute (x).
+
+References:
+1.Tutorial:
+https://www.tutorialspoint.com/unix/unix-getting-started.htm
+2. Shell:
+https://developer.aliyun.com/article/70651

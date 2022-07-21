@@ -1,0 +1,18 @@
+
+1. test class MUST be "public"
+
+2. test method MUST be "public"
+
+3. return type of test method MUST be "void"
+
+4. NO input parameter for test method
+
+5. test method MUST has @Test annotation
+
+6. Each class can have MANY test methods,
+   each method can execute independently
+
+7. test one test method: select specific test method
+   test ALL test methods: 1. select blank space 2. run Test class
+
+8. DO NOT name a class as "Test" except for testing to avoid naming collision

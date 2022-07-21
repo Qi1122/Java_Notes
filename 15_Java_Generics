@@ -1,0 +1,10 @@
+
+In a nutshell, generics enable types (classes and interfaces)
+to be parameters when defining classes, interfaces and methods.
+-> 把类型“参数化”
+
+References:
+1. https://www.baeldung.com/java-generics
+2. https://blog.csdn.net/weixin_28931449/article/details/112353238
+3. https://docs.oracle.com/javase/tutorial/java/generics/why.html
+4. https://www.baeldung.com/java-generics

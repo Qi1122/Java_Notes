@@ -116,3 +116,43 @@ when the class is loaded in the memory.
 
 5. Java operation:
 https://www.javatpoint.com/operators-in-java
+
+6.
+inject:
+to introduce as an element or factor in or into some situation or subject
+
+7. method area:
+https://www.artima.com/insidejvm/ed2/jvm5.html
+
+https://www.programcreek.com/2013/01/when-and-how-a-java-class-is-loaded-and-initialized/
+
+Class loading:
+
+1. When a class is loaded in Java
+Classloading is done by ClassLoaders in Java which can be implemented to eagerly load a class
+as soon as another class references it or lazy load the class until a need for class initialization occurs.
+
+If Class is loaded before it's actually being used it can sit inside before being initialized.
+I believe this may vary from JVM to JVM. While it's guaranteed by JLS that a class will be loaded when there is a need for static initialization.
+
+
+2. When a class is initialized in Java
+After class loading, initialization of the class takes place which means initializing
+all static members of the class. A Class is initialized in Java when :
+
+1) an instance of the class is created using either a new() keyword or using
+ reflection using class.forName(), which may throw ClassNotFoundException in Java.
+2) a static method of a class is invoked.
+3) a static field of Class is assigned.
+4) a static field of a class is used which is not a constant variable.
+5) if Class is a top-level class and an assert statement lexically nested within the class is executed.
+
+Read more: https://javarevisited.blogspot.com/2012/07/when-class-loading-initialization-java-example.html#ixzz7NZk37es6
+
+
+
+
+Read more: https://javarevisited.blogspot.com/2012/07/when-class-loading-initialization-java-example.html#ixzz7NZjjgVxN
+
+
+https://javarevisited.blogspot.com/2012/07/when-class-loading-initialization-java-example.html#google_vignette

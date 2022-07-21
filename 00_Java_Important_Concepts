@@ -37,3 +37,7 @@ https://www.baeldung.com/java-finalize
 
 2. access modifiers
 http://tutorials.jenkov.com/java/access-modifiers.html
+
+3. debug ->
+   先查有没有错误，再找是不是某个错误。
+   eg：I think you need to look elsewhere for your leak (if indeed you even have a leak).

@@ -1,0 +1,31 @@
+When we said "pointer" in Java, it's very different from C++ Pointers.
+指针（pointer）和 int，char 类似，是一种独立的数据类型。
+
+虽然c++编译器会警告，但是指针可以不初始化，而引用必须初始化，并且，引用的目标一旦确定，后面不能再更改，指针可以更改其指向的目标。
+*a = 5; //pointer
+&b;     //reference
+*a = &b;
+
+Bad Pointers
+When a pointer is first allocated, it does not have a pointee. The pointer is "uninitialized"
+or simply "bad". A dereference operation on a bad pointer is a serious runtime error. If
+you are lucky, the dereference operation will crash or halt immediately (Java behaves this
+way). If you are unlucky, the bad pointer dereference will corrupt a random area of
+memory, slightly altering the operation of the program so that it goes wrong some
+indefinite time later. Each pointer must be assigned a pointee before it can support
+dereference operations. Before that, the pointer is bad and must not be used. In our
+memory drawings, the bad pointer value is shown with an XXX value...
+
+Bad pointers are very common. In fact, every pointer starts out with a bad value.
+Correct code overwrites the bad value with a correct reference to a pointee, and thereafter
+the pointer works fine. There is nothing automatic that gives a pointer a valid pointee.
+6
+Quite the opposite — most languages make it easy to omit this important step. You just
+have to program carefully. If your code is crashing, a bad pointer should be your first
+suspicion.
+
+References:
+1. zhihu:
+https://www.zhihu.com/question/31022750
+2. stanford:
+http://cslibrary.stanford.edu/102/PointersAndMemory.pdf

@@ -1,0 +1,32 @@
+It's a concept for primitive type conversion.
+
+primitive => Object: autoboxing
+Object => primitive: unboxing
+
+Problem1:
+        Integer number1 = 128;
+        Integer number2 = 128;
+        number1 == number2; //return false
+
+	   	Integer number3 = 127;
+	   	Integer number4 = 127;
+	   	number3 == number4; //return true
+
+JVM对 -128到127 的 Integer 对象做了缓存，所以 number3 和 number4 实际上是同一个对象，比较结果自然也就返回 true。
+
+Problem2:
+Integer sum = 0;
+for (int i = 0; i < 1000; i++) {
+	sum = sum + i;
+}
+
+- sum 是一个 Integer 对象，不能直接进行 + 操作,
+- 所以会先执行 sum.intValue() 拆箱，得到 int 类型进行 + 操作,
+- 然后再执行 Integer.valueOf(sum) 进行装箱操作，得到一个 Integer 对象赋值给 sum
+- 虽然 Java 虚拟机对 -128 到 127 的 Integer 对象做了缓存，但是从第 128 到 1000 次循环中总共还要创建 873 个对象。
+- 这将导致程序的性能降低甚至触发垃圾回收。
+- 而简单地把 sum 的类型改为 int 就可解决问题。
+
+References:
+1.
+https://chanthuang.github.io/2016/09/07/java-autoboxing-and-unboxing/

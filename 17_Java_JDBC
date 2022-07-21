@@ -1,0 +1,48 @@
+
+1. JDBC:Java Database Connectivity.
+Is a Java API to connect and execute the query with the database.
+JDBC API uses JDBC drivers to connect with the database:
+   1) JDBC-ODBC Bridge Driver,
+   2) Native Driver,
+   3) Network Protocol Driver, and
+   4) Thin Driver
+packaged driver (.jar) is ready to use when imported to program
+each Database has its own driver
+
+2. Steps using JDBC to connect java program to relational database:
+    1) Register the Driver class -> 把Driver类加载到JVM，并且完成类的初始化工作。
+    DriverManager Class -> now use (API2.0) DataSource Class
+    Applications no longer need to explicitly load JDBC drivers using Class.forName().
+    When the method getConnection is called, the DriverManager will attempt to locate a suitable driver
+
+    2) Create connection -> Connection Interface
+
+    3) Create statement -> Statement Interface (sql compiler: execute sql, send sql to database)
+            statement对象的作用是通过数据库连接来创建转存sql对象Statement
+
+
+    4) Execute queries -> PrepareStatement Interface: 预编译SQL,对sql进行预编译，传递参数防止sql注入
+                       -> ResultSet  查询结果集对象 执行查询操时，对返回结果的处理
+    5) Close connection
+
+
+Register the Driver class:
+(使用反射来加载驱动的好处：
+        1、将数据的驱动以字符串形式来传递，方便修改和维护
+        2、通过反射的形式传递驱动类的全类名可以降低程序的耦合。)
+使用静态代码块的好处：
+
+1、静态代码块只在类的加载时加载一次。符合驱动加载的需求，不许重复加载
+2、生命周期上，静态代码块的生命周期和类是一致的，并且在类加载的时候就运行，不需要依赖对象的创建，
+数据的驱动获取时机和静态的带块加载时机一致。
+
+
+References:
+1.java point:
+https://www.javatpoint.com/java-jdbc
+2.oracle doc:
+https://docs.oracle.com/javase/tutorial/jdbc/basics/gettingstarted.html
+3. connect jdbc: good one!
+https://daimajiaoliu.com/daima/6cbbc7bd2b87c03
+4. Oracle nosql
+https://docs.oracle.com/en/cloud/paas/nosql-cloud/csnsd/developing-oracle-nosql-database-cloud-simulator.html

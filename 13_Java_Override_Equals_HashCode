@@ -1,0 +1,26 @@
+
+
+References:
+1. 搞懂 Java equals 和 hashCode 方法
+https://www.jianshu.com/p/35cb542a285f
+2. HashCode
+https://segmentfault.com/a/1190000020301483
+3. Java HashMap source code
+https://developer.classpath.org/doc/java/util/HashMap-source.html
+4. transient
+https://en.wikibooks.org/wiki/Java_Programming/Keywords/transient
+5. hashmap
+https://www.logicbig.com/tutorials/core-java-tutorial/java-collections/hash-map-equal-and-hash-code.html
+
+There's no such thing as a transient object.
+There are transient fields, which are
+ignored during serialization - but that has no effect on garbage collection.
+
+transient is a variables modifier used in serialization.
+At the time of serialization, if we don’t want to save value
+of a particular variable in a file, then we use transient keyword.
+When JVM comes across transient keyword, it ignores original
+value of the variable and save default value of that variable data type.
+
+transient is a Java keyword which marks a member variable
+not to be serialized when it is persisted to streams of bytes.
